@@ -1,7 +1,7 @@
 import LoginForm from "../components/loginForm";
 import "./Login.css";
 
-function Login() {
+function Login({ onSignUp }) {
   return (
     <div className="login-container">
       <button className="back-btn">← Back to Launcher</button>
@@ -28,7 +28,16 @@ function Login() {
         <LoginForm />
 
         <p className="signup-row">
-          Don't have an account? <a href="#">Sign Up</a>
+          Don't have an account?{" "}
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              onSignUp?.();
+            }}
+          >
+            Sign Up
+          </a>
         </p>
       </div>
 

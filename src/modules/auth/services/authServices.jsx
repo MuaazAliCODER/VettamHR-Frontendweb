@@ -1,5 +1,5 @@
 export const loginUser = async (data) => {
-  const response = await fetch("https://example.com/api/login", {
+  const response = await fetch("Future API Endpoint", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
