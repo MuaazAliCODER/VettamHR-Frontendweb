@@ -15,7 +15,7 @@
   font-family: 'DM Sans', sans-serif;
 }
 
-/* ── Back button ── */
+
 .back-btn {
   position: fixed;
   top: 20px;
@@ -34,7 +34,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ── Card ── */
+
 .login-card {
   background: white;
   border-radius: 16px;
@@ -45,7 +45,7 @@
   text-align: center;
 }
 
-/* ── Logo row ── */
+
 .logo-row {
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@
   color: #1a1a1a;
 }
 
-/* ── Portal label ── */
+
 .portal-label {
   display: flex;
   align-items: center;
@@ -87,14 +87,14 @@
   margin-bottom: 4px;
 }
 
-/* ── Subtitle ── */
+
 .subtitle {
   font-size: 13px;
   color: #9ca3af;
   margin-bottom: 24px;
 }
 
-/* ── Signup row ── */
+
 .signup-row {
   margin-top: 18px;
   font-size: 13.5px;
@@ -109,7 +109,7 @@
   text-decoration: underline;
 }
 
-/* ── Help button ── */
+
 .help-btn {
   position: fixed;
   bottom: 20px;
