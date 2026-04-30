@@ -3,11 +3,13 @@ import Login from "./modules/auth/pages/Login.jsx";
 import ChoosePlan from "./modules/auth/pages/ChoosePlan.jsx";
 import RegisterForm from "./modules/auth/pages/RegisterFrom.jsx";
 import BankSetup from "./modules/auth/pages/BankSetup.jsx";
+import DashboardLayout from "./modules/Dashboard/DashboardLayout.jsx";
 
 function App() {
   const [screen, setScreen] = useState("login"); 
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [registrationData, setRegistrationData] = useState(null);
+  const [userData, setUserData] = useState(null);
 
   if (screen === "choose-plan") {
     return (
@@ -40,7 +42,31 @@ function App() {
         onBack={() => setScreen("register")}
         onComplete={(bankData) => {
           console.log("Bank setup completed:", bankData);
-          // Continue to next screen after bank setup
+          // Combine registration and bank data
+          const completeUserData = {
+            ...registrationData,
+            bankDetails: bankData,
+            companyName: registrationData.companyName,
+            email: registrationData.email,
+            plan: registrationData.planData?.plan || "Professional",
+            billingCycle: registrationData.planData?.billingCycle || "Monthly"
+          };
+          setUserData(completeUserData);
+          setScreen("dashboard");
+        }}
+      />
+    );
+  }
+
+  if (screen === "dashboard") {
+    return (
+      <DashboardLayout
+        user={userData}
+        onSignOut={() => {
+          setScreen("login");
+          setUserData(null);
+          setRegistrationData(null);
+          setSelectedPlan(null);
         }}
       />
     );
