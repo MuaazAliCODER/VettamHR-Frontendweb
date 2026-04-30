@@ -15,6 +15,7 @@
 
 
 .back-btn {
+  display: none;
   position: fixed;
   top: 20px;
   left: 20px;
@@ -143,6 +144,7 @@
   display: flex; align-items: center;
 }
 
+
 .pw-requirements {
   background: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -161,11 +163,15 @@
 .pw-requirements li {
   font-size: 12px;
   display: flex; align-items: center; gap: 7px;
-  color: #6b7280;
   transition: color 0.2s;
 }
-.pw-requirements li.req-ok { color: #16a34a; }
-.pw-requirements li.req-fail { color: #6b7280; }
+
+/* RED before requirement is met */
+.pw-requirements li.req-fail { color: #dc2626; }
+
+/* GREEN once requirement is met */
+.pw-requirements li.req-ok   { color: #16a34a; }
+
 .req-dot {
   font-size: 12px; font-weight: 700;
   width: 14px; flex-shrink: 0;
@@ -177,7 +183,7 @@
   margin-top: 4px;
   font-weight: 500;
 }
-.match-ok { color: #16a34a; }
+.match-ok   { color: #16a34a; }
 .match-fail { color: #dc2626; }
 
 
@@ -197,6 +203,7 @@
   padding: 6px 10px;
 }
 
+
 .subscription-box {
   background: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -215,7 +222,7 @@
   font-size: 13px; color: #374151;
 }
 .sub-row span:first-child { color: #6b7280; }
-.sub-row span:last-child { font-weight: 500; color: #1a1a1a; }
+.sub-row span:last-child  { font-weight: 500; color: #1a1a1a; }
 .sub-row--total {
   border-top: 1px solid #e5e7eb;
   padding-top: 8px;
@@ -243,6 +250,7 @@
   color: #1a1a1a; font-weight: 600; text-decoration: underline;
 }
 
+
 .cta-btn {
   width: 100%;
   padding: 12px;
@@ -254,10 +262,19 @@
   font-family: 'DM Sans', sans-serif;
   letter-spacing: 0.01em;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: background 0.2s, transform 0.1s, opacity 0.25s, filter 0.25s;
 }
-.cta-btn:hover { background: #000; }
-.cta-btn:active { transform: scale(0.99); }
+.cta-btn:hover:not(:disabled) { background: #000; }
+.cta-btn:active:not(:disabled) { transform: scale(0.99); }
+
+/* Blurred + no cursor when form is incomplete */
+.cta-btn--disabled,
+.cta-btn:disabled {
+  opacity: 0.45;
+  filter: blur(1.5px);
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
 
 .back-plans-btn {

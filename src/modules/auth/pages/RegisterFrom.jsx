@@ -2,10 +2,10 @@ import { useState } from "react";
 import "./RegisterForm.css";
 
 const RULES = [
-  { id: "len",   label: "At least 8 characters",          test: (v) => v.length >= 8 },
-  { id: "upper", label: "One uppercase letter",            test: (v) => /[A-Z]/.test(v) },
-  { id: "lower", label: "One lowercase letter",            test: (v) => /[a-z]/.test(v) },
-  { id: "num",   label: "One number",                      test: (v) => /[0-9]/.test(v) },
+  { id: "len",   label: "At least 8 characters",           test: (v) => v.length >= 8 },
+  { id: "upper", label: "One uppercase letter",             test: (v) => /[A-Z]/.test(v) },
+  { id: "lower", label: "One lowercase letter",             test: (v) => /[a-z]/.test(v) },
+  { id: "num",   label: "One number",                       test: (v) => /[0-9]/.test(v) },
   { id: "spec",  label: "One special character (!@#$%^&*)", test: (v) => /[!@#$%^&*]/.test(v) },
 ];
 
@@ -36,50 +36,47 @@ function RegisterForm({ planData, onBack, onSubmit }) {
     email: "",
     password: "",
     confirmPassword: "",
-    bankAccount: "",
     agreed: false,
   });
-  const [showPw, setShowPw] = useState(false);
+  const [showPw, setShowPw]   = useState(false);
   const [showCPw, setShowCPw] = useState(false);
   const [touched, setTouched] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
-  const touch = (k) => setTouched((t) => ({ ...t, [k]: true }));
+  const set   = (k, v) => setForm((f) => ({ ...f, [k]: v }));
+  const touch = (k)    => setTouched((t) => ({ ...t, [k]: true }));
 
-  const pwOk = RULES.every((r) => r.test(form.password));
+  const pwOk    = RULES.every((r) => r.test(form.password));
   const pwMatch = form.password === form.confirmPassword && form.confirmPassword !== "";
-  const bankOk = /^\d{10}$/.test(form.bankAccount);
+  const regOk   = /^\d{10}$/.test(form.regNumber);
 
   const errors = {
-    companyName: !form.companyName.trim() ? "Company name is required" : null,
-    regNumber: !form.regNumber.trim() ? "Registration number is required" : null,
-    email: !form.email.trim()
-      ? "Email is required"
-      : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
-      ? "Enter a valid email"
-      : null,
-    password: !form.password
-      ? "Password is required"
-      : !pwOk
-      ? "Password does not meet all requirements"
-      : null,
+    companyName:     !form.companyName.trim() ? "Company name is required" : null,
+    regNumber:       !form.regNumber.trim()
+                       ? "Registration number is required"
+                       : !regOk
+                       ? "Must be exactly 10 digits"
+                       : null,
+    email:           !form.email.trim()
+                       ? "Email is required"
+                       : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
+                       ? "Enter a valid email"
+                       : null,
+    password:        !form.password
+                       ? "Password is required"
+                       : !pwOk
+                       ? "Password does not meet all requirements"
+                       : null,
     confirmPassword: !form.confirmPassword
-      ? "Please confirm your password"
-      : !pwMatch
-      ? "Passwords do not match"
-      : null,
-    bankAccount: !form.bankAccount
-      ? "Bank account number is required"
-      : !bankOk
-      ? "Must be exactly 10 digits"
-      : null,
-    agreed: !form.agreed ? "You must accept the terms" : null,
+                       ? "Please confirm your password"
+                       : !pwMatch
+                       ? "Passwords do not match"
+                       : null,
+    agreed:          !form.agreed ? "You must accept the terms" : null,
   };
 
   const hasErrors = Object.values(errors).some(Boolean);
-
-  const showErr = (k) => (submitted || touched[k]) && errors[k];
+  const showErr   = (k) => (submitted || touched[k]) && errors[k];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -88,7 +85,7 @@ function RegisterForm({ planData, onBack, onSubmit }) {
     onSubmit?.({ ...form, planData });
   };
 
-  const planName = planData?.plan
+  const planName  = planData?.plan
     ? planData.plan.charAt(0).toUpperCase() + planData.plan.slice(1)
     : "—";
   const planPrice = planData?.price
@@ -132,16 +129,22 @@ function RegisterForm({ planData, onBack, onSubmit }) {
             />
           </Field>
 
-          {/* Registration Number */}
+          {/* Registration Number — 10-digit numeric validation */}
           <Field label="Company Registration Number" required error={showErr("regNumber")}>
             <input
               type="text"
-              placeholder="RC123456"
+              inputMode="numeric"
+              placeholder="0123456789"
+              maxLength={10}
               value={form.regNumber}
-              onChange={(e) => set("regNumber", e.target.value)}
+              onChange={(e) => {
+                const v = e.target.value.replace(/\D/g, "").slice(0, 10);
+                set("regNumber", v);
+              }}
               onBlur={() => touch("regNumber")}
               className={showErr("regNumber") ? "input-err" : ""}
             />
+            <p className="field-hint">10-digit registration number (integers only)</p>
           </Field>
 
           {/* Business Email */}
@@ -185,30 +188,11 @@ function RegisterForm({ planData, onBack, onSubmit }) {
               />
               <EyeBtn show={showCPw} toggle={() => setShowCPw(!showCPw)} />
             </div>
-            {/* match indicator */}
             {form.confirmPassword && (
               <p className={`pw-match-hint ${pwMatch ? "match-ok" : "match-fail"}`}>
                 {pwMatch ? "✓ Passwords match" : "✗ Passwords do not match"}
               </p>
             )}
-          </Field>
-
-          {/* Bank Account Number */}
-          <Field label="Bank Account Number" required error={showErr("bankAccount")}>
-            <input
-              type="text"
-              inputMode="numeric"
-              placeholder="0123456789"
-              maxLength={10}
-              value={form.bankAccount}
-              onChange={(e) => {
-                const v = e.target.value.replace(/\D/g, "").slice(0, 10);
-                set("bankAccount", v);
-              }}
-              onBlur={() => touch("bankAccount")}
-              className={showErr("bankAccount") ? "input-err" : ""}
-            />
-            <p className="field-hint">10-digit account number (integers only)</p>
           </Field>
 
           {/* Selected Subscription */}
@@ -235,13 +219,22 @@ function RegisterForm({ planData, onBack, onSubmit }) {
                 touch("agreed");
               }}
             />
-            <span>I agree to the <a href="#" onClick={e => e.preventDefault()}>Terms of Service</a> and <a href="#" onClick={e => e.preventDefault()}>Privacy Policy</a></span>
+            <span>
+              I agree to the{" "}
+              <a href="#" onClick={(e) => e.preventDefault()}>Terms of Service</a>
+              {" "}and{" "}
+              <a href="#" onClick={(e) => e.preventDefault()}>Privacy Policy</a>
+            </span>
           </label>
           {showErr("agreed") && <p className="err-msg">{errors.agreed}</p>}
 
-          {/* Submit */}
-          <button type="submit" className="cta-btn">
-            Continue to Bank Setup
+          {/* Submit — blurred & unclickable until form is fully valid */}
+          <button
+            type="submit"
+            className={`cta-btn ${hasErrors ? "cta-btn--disabled" : ""}`}
+            disabled={hasErrors}
+          >
+            Go to Bank Setup
           </button>
 
           <button
