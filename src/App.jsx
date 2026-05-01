@@ -59,6 +59,7 @@ function App() {
   }
 
   if (screen === "dashboard") {
+    console.log("Rendering dashboard with userData:", userData);
     return (
       <DashboardLayout
         user={userData}

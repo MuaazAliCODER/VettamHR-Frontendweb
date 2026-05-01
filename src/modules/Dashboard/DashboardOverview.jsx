@@ -5,20 +5,25 @@ import QuickActions from "./components/QuickActions";
 import "./DashboardOverview.css";
 
 export default function DashboardOverview({ user }) {
+  console.log("DashboardOverview rendering with user:", user);
   const SAMPLE_ACTIVITIES = [
     { name: "Welcome to your dashboard", detail: user?.email || "user@example.com", time: "Now" },
     { name: "Ready to onboard staff", detail: "System", time: "Now" },
   ];
+
+  const QUICK_ACTIONS = [
+    { icon: "👤", label: "Add New Staff", sub: "Register new team members" },
+    { icon: "🔗", label: "Onboard Staff", sub: "Add existing network staff" },
+    { icon: "💳", label: "Process Payments", sub: "Pay your employees" },
+    { icon: "☰", label: "View Directory", sub: "Browse all employees" },
+  ];
   return (
-    <div className="dashboard-overview">
+    <div className="dashboard-overview" style={{ minHeight: '100vh', background: '#f5f5f7', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       {/* Welcome banner */}
-      <div className="welcome-banner">
-        <h2 className="welcome-title">Welcome to {user?.companyName || "Your Company"} Dashboard</h2>
-        <p className="welcome-sub">Get started by onboarding staff members to your organization.</p>
-        <div className="user-info">
-          <p className="user-email">Account: {user?.email || "user@example.com"}</p>
-          <p className="user-plan">Plan: {user?.plan || "Professional"} ({user?.billingCycle || "Monthly"})</p>
-        </div>
+      <div className="welcome-banner" style={{ background: 'white', padding: '20px', borderRadius: '10px', marginBottom: '20px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+        <h2 className="welcome-title" style={{ fontSize: '24px', marginBottom: '10px', color: '#333' }}>Welcome to {user?.companyName || "Your Company"} Dashboard</h2>
+        <p className="welcome-sub" style={{ color: '#666', marginBottom: '15px' }}>Get started by onboarding staff members to your organization.</p>
+        
       </div>
 
       {/* Stat cards */}

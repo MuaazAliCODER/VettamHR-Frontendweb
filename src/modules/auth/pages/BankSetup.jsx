@@ -80,17 +80,22 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
     onComplete?.({ ...form, verifiedName });
   };
 
-  const summary = registrationData || {
-    company: "Testing",
-    plan: "Professional",
-    billing: "6-Month",
-    amount: "₦135,000",
+  const planData = registrationData?.planData;
+  const summary = {
+    company: registrationData?.companyName || "Your company",
+    plan: planData?.plan ? planData.plan.charAt(0).toUpperCase() + planData.plan.slice(1) : "Professional",
+    billing: planData?.billingCycle || "Monthly",
+    amount: planData?.price ? `₦${Number(planData.price).toLocaleString("en-NG")}` : "—",
   };
+
+  const invoiceCycleLabel = planData?.billingCycle === "6-Month"
+    ? "6 months"
+    : planData?.billingCycle === "Annual"
+    ? "year"
+    : "month";
 
   return (
     <div className="bank-setup-page">
-      <button className="back-launcher-btn" onClick={onBack}>← Back to Launcher</button>
-
       <div className="bank-card">
         {/* Top branding */}
         <div className="bank-branding">
@@ -205,21 +210,24 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
             {errors.accountType && <p className="field-error">{errors.accountType}</p>}
           </div>
 
-          {/* Registration Summary */}
-          <div className="summary-box">
-            <p className="summary-title">Registration Summary:</p>
+          <div className="summary-box invoice-box">
+            <p className="summary-title">Invoice</p>
             <div className="summary-rows">
               <div className="summary-row">
-                <span>Company:</span><span>{summary.company}</span>
+                <span>Plan selected:</span><span>{summary.plan}</span>
               </div>
               <div className="summary-row">
-                <span>Plan:</span><span>{summary.plan}</span>
+                <span>Billing cycle:</span><span>{summary.billing}</span>
               </div>
               <div className="summary-row">
-                <span>Billing:</span><span>{summary.billing}</span>
+                <span>Price:</span><span>{summary.amount}</span>
               </div>
               <div className="summary-row amount-row">
-                <span>Amount:</span><span className="amount-val">{summary.amount}</span>
+                <span>Payable:</span>
+                <span className="amount-val">
+                  {summary.amount}
+                  <span className="summary-cycle">/{invoiceCycleLabel}</span>
+                </span>
               </div>
             </div>
           </div>

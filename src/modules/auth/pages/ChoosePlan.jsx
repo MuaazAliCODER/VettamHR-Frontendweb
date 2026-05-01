@@ -142,8 +142,6 @@ function ChoosePlan({ onContinue, onSignIn }) {
 
   return (
     <div className="choose-plan-container">
-      <button className="back-btn">← Back to Launcher</button>
-
       <div className="choose-plan-card">
         {/* Logo */}
         <div className="logo-row">

@@ -94,8 +94,6 @@ function RegisterForm({ planData, onBack, onSubmit }) {
 
   return (
     <div className="register-container">
-      <button className="back-btn" type="button">← Back to Launcher</button>
-
       <div className="register-card">
         {/* Logo */}
         <div className="logo-row">

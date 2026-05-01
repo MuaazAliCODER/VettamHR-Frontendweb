@@ -4,8 +4,6 @@ import "./Login.css";
 function Login({ onSignUp }) {
   return (
     <div className="login-container">
-      <button className="back-btn">← Back to Launcher</button>
-
       <div className="login-card">
         {/* Logo */}
         <div className="logo-row">

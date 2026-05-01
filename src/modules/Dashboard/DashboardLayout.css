@@ -1,19 +1,21 @@
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
+  width: 100%;
   background: #f5f5f7;
   font-family: 'DM Sans', sans-serif;
 }
 
 .dashboard-main {
   flex: 1;
+  width: 100%;
   overflow-y: auto;
   min-width: 0;
 }
 
 .dashboard-content {
   padding: 24px;
-  max-width: 1100px;
+  /* max-width: 1100px; */
 }
 
 .coming-soon {
@@ -26,4 +28,15 @@
   background: white;
   border-radius: 14px;
   border: 1px solid #f0f0f0;
+}
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f4f6;
+  font-family: 'DM Sans', sans-serif;
+}
+
+@media (max-width: 700px) {
+  .dashboard-layout { flex-direction: column; }
+  .dashboard-content { padding: 12px; }
 }
