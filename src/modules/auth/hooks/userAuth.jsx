@@ -5,13 +5,15 @@ export function useAuth() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const login = async (data) => {
+  const login = async (data, onSuccess) => {
     setLoading(true);
     setError(null);
 
     try {
       const res = await loginUser(data);
-      console.log(res);
+      if (res.success && onSuccess) {
+        onSuccess(res.user);
+      }
     } catch (err) {
       setError(err.message);
     } finally {

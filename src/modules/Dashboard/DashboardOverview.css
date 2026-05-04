@@ -1,0 +1,45 @@
+.dashboard-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.welcome-banner {
+  background: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 14px;
+  padding: 18px 24px;
+}
+.welcome-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px; font-weight: 700; color: #111827; margin-bottom: 4px;
+}
+.welcome-sub { font-size: 13px; color: #6b7280; }
+
+.stats-row {
+  display: flex;
+  gap: 14px;
+}
+
+.mid-row {
+  display: flex;
+  gap: 14px;
+}
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.mid-row {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .mid-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}

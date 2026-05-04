@@ -5,7 +5,7 @@
 
 .register-container {
   min-height: 100vh;
-  background: #f5f5f7;
+  background: #f5f7fb;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -15,6 +15,7 @@
 
 
 .back-btn {
+  display: inline-flex;
   position: fixed;
   top: 20px;
   left: 20px;
@@ -37,7 +38,7 @@
   border-radius: 16px;
   padding: 36px 28px 28px;
   width: 100%;
-  max-width: 460px;
+  max-width: 520px;
   border: 1px solid #e8e8e8;
   box-shadow: 0 4px 20px rgba(0,0,0,0.07);
   text-align: center;
@@ -62,7 +63,9 @@
 }
 .logo-text {
   font-family: 'Sora', sans-serif;
-  font-size: 19px; font-weight: 700; color: #1a1a1a;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
 }
 
 
@@ -143,6 +146,7 @@
   display: flex; align-items: center;
 }
 
+
 .pw-requirements {
   background: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -161,11 +165,15 @@
 .pw-requirements li {
   font-size: 12px;
   display: flex; align-items: center; gap: 7px;
-  color: #6b7280;
   transition: color 0.2s;
 }
-.pw-requirements li.req-ok { color: #16a34a; }
-.pw-requirements li.req-fail { color: #6b7280; }
+
+/* RED before requirement is met */
+.pw-requirements li.req-fail { color: #dc2626; }
+
+/* GREEN once requirement is met */
+.pw-requirements li.req-ok   { color: #16a34a; }
+
 .req-dot {
   font-size: 12px; font-weight: 700;
   width: 14px; flex-shrink: 0;
@@ -177,7 +185,7 @@
   margin-top: 4px;
   font-weight: 500;
 }
-.match-ok { color: #16a34a; }
+.match-ok   { color: #16a34a; }
 .match-fail { color: #dc2626; }
 
 
@@ -197,6 +205,7 @@
   padding: 6px 10px;
 }
 
+
 .subscription-box {
   background: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -215,7 +224,7 @@
   font-size: 13px; color: #374151;
 }
 .sub-row span:first-child { color: #6b7280; }
-.sub-row span:last-child { font-weight: 500; color: #1a1a1a; }
+.sub-row span:last-child  { font-weight: 500; color: #1a1a1a; }
 .sub-row--total {
   border-top: 1px solid #e5e7eb;
   padding-top: 8px;
@@ -243,6 +252,7 @@
   color: #1a1a1a; font-weight: 600; text-decoration: underline;
 }
 
+
 .cta-btn {
   width: 100%;
   padding: 12px;
@@ -254,10 +264,18 @@
   font-family: 'DM Sans', sans-serif;
   letter-spacing: 0.01em;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: background 0.2s, transform 0.1s, opacity 0.25s, filter 0.25s;
 }
-.cta-btn:hover { background: #000; }
-.cta-btn:active { transform: scale(0.99); }
+.cta-btn:hover:not(:disabled) { background: #000; }
+.cta-btn:active:not(:disabled) { transform: scale(0.99); }
+
+/* Blurred + no cursor when form is incomplete */
+.cta-btn--disabled,
+.cta-btn:disabled {
+ background-color: #818089;
+ color: white;
+  pointer-events: none;
+}
 
 
 .back-plans-btn {
@@ -289,4 +307,28 @@
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .register-card {
+    width: 100%;
+    padding: 28px 20px 24px;
+    border-radius: 14px;
+  }
+
+  .subscription-box,
+  .terms-row,
+  .pw-requirements,
+  .back-plans-btn {
+    width: 100%;
+  }
+
+  .back-plans-btn {
+    text-align: center;
+  }
+
+  .help-btn {
+    right: 14px;
+    bottom: 14px;
+  }
 }

@@ -1,0 +1,360 @@
+.wrapper {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid rgba(229, 231, 235, 0.95);
+  border-radius: 24px;
+  padding: 36px 42px 40px;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+  animation: fadeIn 0.28s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.titleRow {
+  margin-bottom: 32px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #ecebf0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-black);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  line-height: 1.7;
+  max-width: 760px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* Verification Box */
+.verificationBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background:#FFFBF6;
+  border: 1.5px solid #ff7171;
+  border-radius: 20px;
+}
+
+.verificationHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.verificationTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #d32f2f;
+}
+
+.verificationSubtitle {
+  font-size: 13px;
+  color: var(--color-gray-600);
+  line-height: 1.6;
+}
+
+/* Fields Grid */
+.fieldsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  letter-spacing: 0.01em;
+}
+
+.req {
+  color: var(--color-error);
+  margin-left: 4px;
+}
+
+.input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  background: #F3F3F5;
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: 12px;
+  font-size: 15px;
+  color: var(--color-gray-900);
+  transition: all var(--transition);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-gray-400);
+}
+
+.input:focus {
+  background: var(--color-white);
+  border-color: var(--color-gray-900);
+  box-shadow: var(--shadow-input-focus);
+}
+
+.inputError {
+  border-color: var(--color-error) !important;
+  background: var(--color-error-bg) !important;
+}
+
+.inputSuccess {
+  border-color: var(--color-success) !important;
+}
+
+.errMsg {
+  font-size: 12px;
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+.verifyError {
+  width: 100%;
+  padding: 12px 14px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Verify Button */
+.verifyBtn {
+  width: 100%;
+  padding: 14px 16px;
+  background:#000000;
+  color:white;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.01em;
+  transition: all var(--transition);
+  margin-top: 4px;
+}
+
+.verifyBtn:not(.verifyBtnDisabled):hover {
+  
+
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+
+.verifyBtnDisabled {
+  background: #817E84 !important;
+  color: #ffffff !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Success Card */
+.successCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 32px;
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  background: #22c55e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.successTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* Staff Details */
+.staffDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: white;
+  border: 1px solid #dcfce7;
+  border-radius: 12px;
+}
+
+.detailLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-gray-600);
+}
+
+.detailValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* Action Buttons */
+.actionButtons {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.confirmBtn {
+  flex: 1;
+  padding: 14px 18px;
+  background: #22c55e;
+  color: white;
+  border-radius: 18px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.confirmBtn:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+.backBtn {
+  flex: 1;
+  padding: 14px 18px;
+  background: white;
+  color: var(--color-gray-700);
+  border: 1.5px solid var(--color-gray-300);
+  border-radius: 18px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.backBtn:hover {
+  border-color: var(--color-gray-500);
+  background: var(--color-gray-50);
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .wrapper {
+    padding: 28px 24px 30px;
+  }
+
+  .verificationBox {
+    padding: 20px;
+  }
+
+  .fieldsGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .wrapper {
+    padding: 20px 16px 24px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .verificationBox {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .fieldsGrid {
+    gap: 16px;
+  }
+
+  .successCard {
+    padding: 24px 16px;
+    gap: 16px;
+  }
+
+  .successIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+}
