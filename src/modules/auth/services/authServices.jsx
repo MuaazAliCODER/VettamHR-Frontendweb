@@ -1,15 +1,25 @@
-export const loginUser = async (data) => {
-  const response = await fetch("Future API Endpoint", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+// Dummy credentials for demo
+const DEMO_CREDENTIALS = {
+  email: "crymzee@test.com",
+  password: "Crymzee@12"
+};
 
-  if (!response.ok) {
-    throw new Error("Login failed");
+export const loginUser = async (data) => {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 800));
+
+  // Validate dummy credentials
+  if (data.email === DEMO_CREDENTIALS.email && data.password === DEMO_CREDENTIALS.password) {
+    return {
+      success: true,
+      user: {
+        email: data.email,
+        companyName: "Crymzee Solutions",
+        plan: "Professional",
+        billingCycle: "Monthly"
+      }
+    };
   }
 
-  return response.json();
+  throw new Error("Invalid email or password");
 };

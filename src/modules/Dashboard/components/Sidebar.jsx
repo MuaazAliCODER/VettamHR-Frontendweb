@@ -42,42 +42,53 @@ const NAV_ITEMS = [
     icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M4.93 19.07l1.41-1.41M19.07 19.07l-1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
   },
 ];
-export default function Sidebar({ activeId = "dashboard", onNavigate, user, onSignOut }) {
+export default function Sidebar({ activeId = "dashboard", onNavigate, user, onSignOut, isOpen = false, onClose }) {
   return (
-    <aside className="sidebar">
-      {/* Brand */}
-      <div className="sidebar-brand">
-        <div className="sidebar-logo">
-          <div className="sidebar-logo-icon">✓</div>
-          <span className="sidebar-logo-text">VettamHR</span>
-        </div>
-        <div className="sidebar-user">
-          <p className="sidebar-email">{user?.email || "wahab@gmail.com"}</p>
-          <p className="sidebar-role">Staff Management Portal</p>
-        </div>
-      </div>
+    <>
+      {isOpen && <div className="sidebar-overlay" onClick={onClose} />}
+      <aside className={`sidebar ${isOpen ? "sidebar-open" : ""}`.trim()}>
+        {/* Close button for mobile */}
+        <button className="sidebar-close-btn" onClick={onClose}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
 
-      {/* Nav */}
-      <nav className="sidebar-nav">
-        {NAV_ITEMS.map((item) => (
-          <button
-            key={item.id}
-            className={`nav-item ${activeId === item.id ? "active" : ""}`}
-            onClick={() => onNavigate?.(item.id)}
-          >
-            <span className="nav-icon">{item.icon}</span>
-            <span className="nav-label">{item.label}</span>
-            {item.badge !== undefined && (
-              <span className="nav-badge">{item.badge}</span>
-            )}
-          </button>
-        ))}
-      </nav>
+        {/* Brand */}
+        <div className="sidebar-brand">
+          <div className="sidebar-logo">
+            <div className="sidebar-logo-icon">✓</div>
+            <span className="sidebar-logo-text">VettamHR</span>
+          </div>
+          <div className="sidebar-user">
+            <p className="sidebar-email">{user?.email || "wahab@gmail.com"}</p>
+            <p className="sidebar-role">Staff Management Portal</p>
+          </div>
+        </div>
 
-      {/* Sign out */}
-      <div className="sidebar-footer">
-        <button className="signout-btn" onClick={onSignOut}>Sign Out</button>
-      </div>
-    </aside>
+        {/* Nav */}
+        <nav className="sidebar-nav">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              className={`nav-item ${activeId === item.id ? "active" : ""}`}
+              onClick={() => onNavigate?.(item.id)}
+            >
+              <span className="nav-icon">{item.icon}</span>
+              <span className="nav-label">{item.label}</span>
+              {item.badge !== undefined && (
+                <span className="nav-badge">{item.badge}</span>
+              )}
+            </button>
+          ))}
+        </nav>
+
+        {/* Sign out */}
+        <div className="sidebar-footer">
+          <button className="signout-btn" onClick={onSignOut}>Sign Out</button>
+        </div>
+      </aside>
+    </>
   );
 }

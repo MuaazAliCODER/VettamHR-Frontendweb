@@ -11,6 +11,11 @@ function App() {
   const [registrationData, setRegistrationData] = useState(null);
   const [userData, setUserData] = useState(null);
 
+  const handleLoginSuccess = (user) => {
+    setUserData(user);
+    setScreen("dashboard");
+  };
+
   if (screen === "choose-plan") {
     return (
       <ChoosePlan
@@ -73,7 +78,12 @@ function App() {
     );
   }
 
-  return <Login onSignUp={() => setScreen("choose-plan")} />;
+  return (
+    <Login 
+      onSignUp={() => setScreen("choose-plan")}
+      onLoginSuccess={handleLoginSuccess}
+    />
+  );
 }
 
 export default App;

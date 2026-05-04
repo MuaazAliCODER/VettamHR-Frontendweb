@@ -211,7 +211,7 @@
   transition: background 0.2s, transform 0.1s;
   margin-bottom: 14px;
 }
-.complete-btn:hover:not(:disabled) { background: #1f2937; }
+.complete-btn:hover:not(:disabled) { background: #818089; }
 .complete-btn:active { transform: scale(0.99); }
 .complete-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 

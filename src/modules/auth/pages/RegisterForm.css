@@ -272,9 +272,8 @@
 /* Blurred + no cursor when form is incomplete */
 .cta-btn--disabled,
 .cta-btn:disabled {
-  opacity: 0.45;
-  filter: blur(1.5px);
-  cursor: not-allowed;
+ background-color: #818089;
+ color: white;
   pointer-events: none;
 }
 
