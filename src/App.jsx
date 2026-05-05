@@ -2,6 +2,7 @@ import { useState } from "react";
 import Login from "./modules/auth/pages/Login.jsx";
 import ChoosePlan from "./modules/auth/pages/ChoosePlan.jsx";
 import RegisterForm from "./modules/auth/pages/RegisterFrom.jsx";
+import RegistrationSuccess from "./modules/auth/pages/RegistrationSuccess.jsx";
 import BankSetup from "./modules/auth/pages/BankSetup.jsx";
 import DashboardLayout from "./modules/Dashboard/DashboardLayout.jsx";
 
@@ -47,10 +48,20 @@ function App() {
         onBack={() => setScreen("register")}
         onComplete={(bankData) => {
           console.log("Bank setup completed:", bankData);
+          setScreen("registration-success");
+        }}
+      />
+    );
+  }
+
+  if (screen === "registration-success") {
+    return (
+      <RegistrationSuccess
+        registrationData={registrationData}
+        onContinue={() => {
           // Combine registration and bank data
           const completeUserData = {
             ...registrationData,
-            bankDetails: bankData,
             companyName: registrationData.companyName,
             email: registrationData.email,
             plan: registrationData.planData?.plan || "Professional",

@@ -1,0 +1,226 @@
+/* Disputes.module.css */
+
+.container {
+  width: 100%;
+  padding: 28px 24px;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: #f9fafb;
+}
+
+/* ── Header ── */
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: -0.2px;
+  margin-bottom: 3px;
+}
+
+.subtitle {
+  font-size: 12.5px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* ── Layout ── */
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* ── Panel ── */
+.panel {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panelHeader {
+  padding: 15px 18px;
+  border-bottom: 1px solid #f0f1f3;
+}
+
+.panelTitle {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.panelMeta {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.panelBody {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 320px;
+}
+
+/* ── Empty State ── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  min-height: 280px;
+  padding: 40px 24px;
+}
+
+.emptyText {
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* ── Disputes List ── */
+.disputesList {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 4px;
+}
+
+.disputeItem {
+  padding: 11px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.disputeItem:hover {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+.disputeItemActive {
+  background: #f3f4f6;
+  border-color: #111827;
+}
+
+.itemTitle {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 3px;
+}
+
+.itemEmployee {
+  font-size: 11.5px;
+  color: #9ca3af;
+  margin-bottom: 7px;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.open        { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.in_progress { background: rgba(251, 146, 60, 0.1);  color: #fb923c; }
+.resolved    { background: rgba(34, 197, 94, 0.1);   color: #22c55e; }
+.closed      { background: rgba(107, 114, 128, 0.1); color: #6b7280; }
+
+/* ── Dispute Details ── */
+.details {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.detailRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailValue {
+  font-size: 13px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.detailDescription {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.65;
+  margin-top: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .panelBody {
+    min-height: 220px;
+  }
+
+  .emptyState {
+    min-height: 180px;
+    padding: 28px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .panelHeader {
+    padding: 12px 14px;
+  }
+
+  .details {
+    padding: 16px;
+  }
+
+  .panel {
+    border-radius: 8px;
+  }
+}
