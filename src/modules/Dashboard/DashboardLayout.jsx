@@ -8,6 +8,7 @@ import StaffStatusPanel from "./modules/StaffStatusPanel";
 import PerformanceReview from "./modules/PerformanceReview";
 import Disputes from "./modules/Disputes";
 import NotificationCenter from "./modules/NotificationCenter";
+import BillingPage from "./modules/BillingPage";
 import "./DashboardLayout.css";
 
 export default function DashboardLayout({ user, onSignOut }) {
@@ -44,6 +45,7 @@ export default function DashboardLayout({ user, onSignOut }) {
       case "performance": return <PerformanceReview />;
       case "disputes": return <Disputes />;
       case "notifications": return <NotificationCenter />;
+      case "billing": return <BillingPage registrationData={user} />;
       default:
         return (
           <div className="coming-soon">

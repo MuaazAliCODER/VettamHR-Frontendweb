@@ -1,0 +1,661 @@
+/* BillingPage.module.css */
+
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 36px 24px;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+}
+
+/* ── Page Header ── */
+.pageHeader { margin-bottom: 28px; }
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.4px;
+  margin-bottom: 4px;
+}
+
+.pageSubtitle {
+  font-size: 13.5px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* ── Section ── */
+.section { margin-bottom: 20px; }
+
+/* ── Shared White Card ── */
+.whiteCard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 28px 32px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.cardSubtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* ── Current Plan Card ── */
+.currentPlanCard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px 28px;
+}
+
+.planTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.planTopLeft {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.planBadges { display: flex; gap: 8px; }
+
+.badgePopular {
+  padding: 4px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: black;
+  background: #ECEEF2;
+}
+
+.badgeActive {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  background: #00A63E;
+  color: white;
+}
+
+.planNamePriceRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f1f3;
+  margin-bottom: 20px;
+}
+
+.planName {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 3px;
+}
+
+.planDesc { font-size: 13px; color: #6b7280; }
+
+.planPriceRight { text-align: right; }
+
+.priceAmount {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pricePeriod { font-size: 12px; color: #9ca3af; }
+
+/* Details grid */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f1f3;
+  margin-bottom: 20px;
+}
+
+.detailBox { display: flex; flex-direction: column; gap: 10px; }
+
+.detailBoxTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+}
+
+.detailLabel { color: #9ca3af; }
+
+.detailValue { color: #111827; font-weight: 500; }
+
+.green { color: #22c55e !important; }
+
+/* Features */
+.featuresSection { padding-top: 4px; }
+
+.featuresSectionTitle {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.featureCheckSvg { flex-shrink: 0; }
+
+/* ── Change Plan ── */
+.cycleSelect { margin-bottom: 24px; }
+
+.cycleLabel {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 7px;
+}
+
+.selectWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.selectWrap.full { width: 100%; }
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 36px 8px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #111827;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.select:focus { outline: none; border-color: #9ca3af; }
+
+.selectChevron {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Plans grid */
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.planCard {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  background: #fff;
+  transition: box-shadow 0.18s;
+}
+
+.planCard:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.07); }
+
+.planCardCurrent {
+  border-color: #fbbf24;
+  background: #fffdf5;
+}
+
+.currentBadge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.planCardName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.planCardDesc {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.planCardAmount {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.planCardPeriod {
+  font-size: 12px;
+  color: #9ca3af;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.planCardEmployeeRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f0f1f3;
+}
+
+.planEmpGrey { color: #6b7280; }
+.planEmpGreen { color: #22c55e; font-weight: 500; }
+
+.planCardFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.planCardFeatureItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #374151;
+}
+
+.planCardExtra {
+  font-size: 12px;
+  color: #9ca3af;
+  padding-left: 24px;
+}
+
+.planActionBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 16px;
+  background: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.planActionBtn:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.planCurrentPlaceholder { height: 40px; }
+
+/* ── Payment & Banking ── */
+.sectionIconRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.sectionIconBox {
+  width: 32px;
+  height: 32px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Bank Section */
+.bankSection { margin-top: 4px; }
+
+.bankSectionHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.bankSectionLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.bankTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.bankSubtitle { font-size: 12.5px; color: #6b7280; }
+
+.addAccountBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.addAccountBtn:hover { background: #1f2937; }
+
+/* Bank Account Item */
+.bankAccountItem {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.bankAccountTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bankAccountName {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.verifiedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.defaultBadge {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.bankAccountMeta {
+  display: flex;
+  gap: 20px;
+  font-size: 12.5px;
+  color: #6b7280;
+  flex: 1;
+}
+
+.bankAccountActions { display: flex; gap: 8px; }
+
+.iconBtn {
+  width: 34px;
+  height: 34px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.iconBtn:hover { background: #e5e7eb; }
+
+.iconBtnDelete:hover { background: #fee2e2; }
+
+/* ── Add Bank Form ── */
+.addBankForm {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-top: 16px;
+  background: #fafafa;
+}
+
+.addBankFormHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.formTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 3px;
+}
+
+.formSubtitle { font-size: 12.5px; color: #6b7280; }
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.formGroup { margin-bottom: 16px; }
+
+.formLabel {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 7px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #111827;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.formInput::placeholder { color: #9ca3af; }
+
+.formInput:focus {
+  outline: none;
+  border-color: #9ca3af;
+}
+
+.formCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+.formCheckbox input { cursor: pointer; }
+
+/* Security Box */
+.securityBox {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  padding: 14px 16px;
+}
+
+.securityTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.securityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.securityList li {
+  font-size: 12px;
+  color: #6b7280;
+  padding-left: 12px;
+  position: relative;
+}
+
+.securityList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #9ca3af;
+}
+
+/* Form Actions */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.btnCancel {
+  padding: 9px 22px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnCancel:hover { background: #f3f4f6; }
+
+.btnSubmit {
+  padding: 9px 22px;
+  background: #374151;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnSubmit:hover { background: #111827; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .plansGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .page { padding: 20px 16px; }
+  .whiteCard, .currentPlanCard { padding: 20px; }
+  .detailsGrid { grid-template-columns: 1fr; }
+  .featuresGrid { grid-template-columns: 1fr; }
+  .formGrid { grid-template-columns: 1fr; }
+  .bankAccountItem { flex-direction: column; align-items: flex-start; }
+  .bankAccountMeta { flex-direction: column; gap: 4px; }
+  .bankSectionHeader { flex-direction: column; gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .pageTitle { font-size: 20px; }
+  .addBankForm { padding: 16px; }
+}
