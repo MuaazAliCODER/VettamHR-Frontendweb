@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../hooks/userAuth";
 import "./form.css";
 
-function LoginForm() {
+function LoginForm({ onLoginSuccess }) {
   const { login, loading, error } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({ email: "", password: "" });
@@ -11,7 +11,7 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(form);
+    login(form, onLoginSuccess);
   };
 
   return (
@@ -45,7 +45,7 @@ function LoginForm() {
             {showPassword ? (
               /* eye-off */
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-                stroke="#9ca3af" strokeWidth="2">
+                stroke="#000000" strokeWidth="2">
                 <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8
                   a18.45 18.45 0 0 1 5.06-5.94"/>
                 <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8
@@ -55,7 +55,7 @@ function LoginForm() {
             ) : (
               /* eye */
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
-                stroke="#9ca3af" strokeWidth="2">
+                stroke="#000000" strokeWidth="2">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                 <circle cx="12" cy="12" r="3"/>
               </svg>

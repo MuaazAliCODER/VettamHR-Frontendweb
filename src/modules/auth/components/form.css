@@ -38,7 +38,7 @@
 }
 
 .form input::placeholder {
-  color: #c0c7d0;
+  color:#717182;
 }
 
 .form input:focus {
@@ -101,4 +101,15 @@
   border: 1px solid #fecaca;
   border-radius: 8px;
   padding: 8px 12px;
+}
+
+@media (max-width: 520px) {
+  .form {
+    gap: 12px;
+  }
+
+  .form input,
+  .form button[type="submit"] {
+    padding: 12px 14px;
+  }
 }

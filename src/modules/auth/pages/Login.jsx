@@ -1,11 +1,9 @@
 import LoginForm from "../components/loginForm";
 import "./Login.css";
 
-function Login({ onSignUp }) {
+function Login({ onSignUp, onLoginSuccess }) {
   return (
     <div className="login-container">
-      <button className="back-btn">← Back to Launcher</button>
-
       <div className="login-card">
         {/* Logo */}
         <div className="logo-row">
@@ -25,7 +23,7 @@ function Login({ onSignUp }) {
 
         <p className="subtitle">Sign in to manage your staff</p>
 
-        <LoginForm />
+        <LoginForm onLoginSuccess={onLoginSuccess} />
 
         <p className="signup-row">
           Don't have an account?{" "}
