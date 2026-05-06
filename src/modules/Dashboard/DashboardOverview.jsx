@@ -2,6 +2,8 @@ import StatCard from "./components/StatCard";
 import ActivityFeed from "./components/ActivityFeed";
 import TopPerformers from "./components/TopPerformers";
 import QuickActions from "./components/QuickActions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserPlus, faLink, faCreditCard, faList, faUsers, faUser, faStar } from '@fortawesome/free-solid-svg-icons';
 import "./DashboardOverview.css";
 
 export default function DashboardOverview({ user, onNavigate }) {
@@ -12,10 +14,10 @@ export default function DashboardOverview({ user, onNavigate }) {
   ];
 
   const QUICK_ACTIONS = [
-    { icon: "👤", label: "Add New Staff", sub: "Register new team members", onClick: () => onNavigate("add-staff") },
-    { icon: "🔗", label: "Onboard Staff", sub: "Add existing network staff", onClick: () => onNavigate("onboard") },
-    { icon: "💳", label: "Process Payments", sub: "Pay your employees", onClick: () => onNavigate("payments") },
-    { icon: "☰", label: "View Directory", sub: "Browse all employees", onClick: () => onNavigate("directory") },
+    { icon: <FontAwesomeIcon icon={faUserPlus} />, label: "Add New Staff", sub: "Register new team members", onClick: () => onNavigate("add-staff") },
+    { icon: <FontAwesomeIcon icon={faLink} />, label: "Onboard Staff", sub: "Add existing network staff", onClick: () => onNavigate("onboard") },
+    { icon: <FontAwesomeIcon icon={faCreditCard} />, label: "Process Payments", sub: "Pay your employees", onClick: () => onNavigate("payments") },
+    { icon: <FontAwesomeIcon icon={faList} />, label: "View Directory", sub: "Browse all employees", onClick: () => onNavigate("directory") },
   ];
   return (
     <div className="dashboard-overview" style={{ minHeight: '100vh', background: '#f5f5f7', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
@@ -28,10 +30,10 @@ export default function DashboardOverview({ user, onNavigate }) {
 
       {/* Stat cards */}
       <div className="stats-row">
-        <StatCard label="Total Employees" value="0" sub="No employees yet" icon="👥" />
-        <StatCard label="New Hires" value="0" sub="This month" icon="👤" />
-        <StatCard label="Monthly Payroll" value="0" prefix="₦" sub="No payroll yet" icon="💳" />
-        <StatCard label="Average Rating" value="0" sub="No ratings yet" icon="★" />
+        <StatCard label="Total Employees" value="0" sub="No employees yet" icon={<FontAwesomeIcon icon={faUsers} />} />
+        <StatCard label="New Hires" value="0" sub="This month" icon={<FontAwesomeIcon icon={faUser} />} />
+        <StatCard label="Monthly Payroll" value="0" prefix="₦" sub="No payroll yet" icon={<FontAwesomeIcon icon={faCreditCard} />} />
+        <StatCard label="Average Rating" value="0" sub="No ratings yet" icon={<FontAwesomeIcon icon={faStar} />} />
       </div>
 
       {/* Activity + Performers */}

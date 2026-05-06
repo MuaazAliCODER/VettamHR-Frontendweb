@@ -208,7 +208,7 @@
 }
 
 .input::placeholder {
-  color: var(--color-gray-400);
+  color: #717182;
 }
 
 .input:focus {

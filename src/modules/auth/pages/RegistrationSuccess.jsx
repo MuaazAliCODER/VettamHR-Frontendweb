@@ -1,4 +1,4 @@
-import styles from "./RegistrationSuccess.css";
+import styles from "./RegistrationSuccess.module.css";
 
 function RegistrationSuccess({ registrationData, onContinue }) {
   const company = registrationData?.companyName || "hdb";

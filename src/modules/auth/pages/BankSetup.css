@@ -115,7 +115,7 @@
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-.field-input::placeholder { color: #c0c7d0; }
+.field-input::placeholder { color:#717182; }
 .field-input:focus { border-color: #1a1a1a; background: white; box-shadow: 0 0 0 3px rgba(26,26,26,0.07); }
 .input-error { border-color: #dc2626 !important; background: #fff5f5 !important; }
 .input-success { border-color: #16a34a !important; background: #f0fdf4 !important; }
