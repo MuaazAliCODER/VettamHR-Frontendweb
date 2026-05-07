@@ -20,7 +20,7 @@ export default function DashboardOverview({ user, onNavigate }) {
     { icon: <FontAwesomeIcon icon={faList} />, label: "View Directory", sub: "Browse all employees", onClick: () => onNavigate("directory") },
   ];
   return (
-    <div className="dashboard-overview" style={{ minHeight: '100vh', background: '#f5f5f7', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+    <div className="dashboard-overview" style={{ minHeight: '100vh', background: '#ffffff', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       {/* Welcome banner */}
       <div className="welcome-banner" style={{ background: 'white', padding: '20px', borderRadius: '10px', marginBottom: '20px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
         <h2 className="welcome-title" style={{ fontSize: '24px', marginBottom: '10px', color: '#333' }}>Welcome to {user?.companyName || "Your Company"} Dashboard</h2>

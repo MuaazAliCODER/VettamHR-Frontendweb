@@ -88,12 +88,6 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
     amount: planData?.price ? `₦${Number(planData.price).toLocaleString("en-NG")}` : "—",
   };
 
-  const invoiceCycleLabel = planData?.billingCycle === "6-Month"
-    ? "6 months"
-    : planData?.billingCycle === "Annual"
-    ? "year"
-    : "month";
-
   return (
     <div className="bank-setup-page">
       <div className="bank-card">
@@ -211,23 +205,20 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
           </div>
 
           <div className="summary-box invoice-box">
-            <p className="summary-title">Invoice</p>
+            <p className="summary-title">Registration Summary</p>
             <div className="summary-rows">
               <div className="summary-row">
-                <span>Plan selected:</span><span>{summary.plan}</span>
+                <span>Company:</span><span>{summary.company}</span>
               </div>
               <div className="summary-row">
-                <span>Billing cycle:</span><span>{summary.billing}</span>
+                <span>Plan:</span><span>{summary.plan}</span>
               </div>
               <div className="summary-row">
-                <span>Price:</span><span>{summary.amount}</span>
+                <span>Billing:</span><span>{summary.billing}</span>
               </div>
               <div className="summary-row amount-row">
-                <span>Payable:</span>
-                <span className="amount-val">
-                  {summary.amount}
-                  <span className="summary-cycle">/{invoiceCycleLabel}</span>
-                </span>
+                <span>Amount:</span>
+                <span className="amount-val">{summary.amount}</span>
               </div>
             </div>
           </div>

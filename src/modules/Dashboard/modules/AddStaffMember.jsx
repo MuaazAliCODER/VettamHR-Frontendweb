@@ -183,7 +183,7 @@ export default function AddStaffMember({ onSuccess, onCancel }) {
             <input
               className={`${styles.input} ${getError('firstName') ? styles.inputError : touched.firstName && form.firstName ? styles.inputSuccess : ''}`}
               type="text"
-              placeholder=""
+              placeholder="Jone"
               value={form.firstName}
               onChange={e => setField('firstName', e.target.value)}
             />
@@ -197,7 +197,7 @@ export default function AddStaffMember({ onSuccess, onCancel }) {
             <input
               className={`${styles.input} ${getError('lastName') ? styles.inputError : touched.lastName && form.lastName ? styles.inputSuccess : ''}`}
               type="text"
-              placeholder=""
+              placeholder="Doe"
               value={form.lastName}
               onChange={e => setField('lastName', e.target.value)}
             />
@@ -212,7 +212,7 @@ export default function AddStaffMember({ onSuccess, onCancel }) {
             <input
               className={`${styles.input} ${getError('email') ? styles.inputError : touched.email && !getError('email') && form.email ? styles.inputSuccess : ''}`}
               type="email"
-              placeholder=""
+              placeholder="jone@gmail.com"
               value={form.email}
               onChange={e => setField('email', e.target.value)}
             />
@@ -226,7 +226,7 @@ export default function AddStaffMember({ onSuccess, onCancel }) {
             <input
               className={`${styles.input} ${getError('phone') ? styles.inputError : touched.phone && !getError('phone') && form.phone ? styles.inputSuccess : ''}`}
               type="tel"
-              placeholder=""
+              placeholder="123-456-7890"
               value={form.phone}
               onChange={e => setField('phone', e.target.value)}
             />

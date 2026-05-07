@@ -27,12 +27,12 @@
   text-align: center;
 }
 .quick-action-btn:hover {
-  border-color: #2563eb;
+  border-color: #000000;
   box-shadow: 0 10px 24px rgba(37,99,235,0.12);
   transform: translateY(-2px);
 }
 
-.qa-icon { font-size: 24px; color: #2563eb; }
+.qa-icon { font-size: 24px; color: #000000; }
 .qa-label { font-size: 14px; font-weight: 700; color: #111827; }
 .qa-sub { font-size: 12px; color: #6b7280; line-height: 1.4; }
 
