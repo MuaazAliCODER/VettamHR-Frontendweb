@@ -57,6 +57,15 @@ export default function NotificationCenter() {
     return n.type?.toLowerCase() === activeFilter.toLowerCase();
   });
 
+  const emptyMessages = {
+    all: "No notifications yet",
+    unread: "No unread notifications yet",
+    "reviews due": "No reviews due notifications yet",
+    overdue: "No overdue notifications yet",
+    completed: "No completed notifications yet",
+    disputes: "No dispute notifications yet",
+  };
+
   return (
     <div className={styles.card}>
       {/* Header */}
@@ -99,7 +108,7 @@ export default function NotificationCenter() {
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
               <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
             </svg>
-            <p className={styles.emptyText}>No notifications yet</p>
+            <p className={styles.emptyText}>{emptyMessages[activeFilter] || emptyMessages.all}</p>
           </div>
         ) : (
           <div className={styles.list}>
