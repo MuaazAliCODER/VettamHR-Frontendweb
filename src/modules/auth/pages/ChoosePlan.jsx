@@ -88,6 +88,10 @@ function PlanCard({ plan, selected, onSelect, billingCycle }) {
           <div
             key={c}
             className={`price-block ${billingCycle === c && selected ? "price-block--active" : ""}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelect(plan.id, c);
+            }}
           >
             <span className="price-amount">{fmt(plan.pricing[c])}</span>
             <span className="price-cycle">{c}</span>
@@ -171,7 +175,10 @@ function ChoosePlan({ onContinue, onSignIn }) {
               key={p.id}
               plan={p}
               selected={selectedPlan === p.id}
-              onSelect={setSelectedPlan}
+              onSelect={(planId, cycle) => {
+                setSelectedPlan(planId);
+                if (cycle) setBillingCycle(cycle);
+              }}
               billingCycle={billingCycle}
             />
           ))}

@@ -8,7 +8,7 @@
 
 .login-container {
   min-height: 100vh;
-  background: #f5f7fb;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,10 +72,10 @@
 }
 
 .logo-text {
-  font-family: 'Sora', sans-serif;
-  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #030213;
 }
 
 
@@ -84,16 +84,16 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 13.5px;
-  color: #374151;
+  font-size: 16px;
+  color: oklch(0.145, 0, 0);
   font-weight: 500;
   margin-bottom: 4px;
 }
 
 
 .subtitle {
-  font-size: 13px;
-  color: #9ca3af;
+  font-size: 16px;
+  color: #717182;
   margin-bottom: 24px;
 }
 
@@ -101,7 +101,7 @@
 .signup-row {
   margin-top: 18px;
   font-size: 17px;
-  color: #6b7280;
+  color: #000000;
 }
 .signup-row a {
   color: #1a1a1a;

@@ -72,10 +72,10 @@
   font-weight: 700;
 }
 .logo-text {
-  font-family: 'Sora', sans-serif;
-  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #030213;
 }
 
 
@@ -84,14 +84,14 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 15.5px;
-  color: #374151;
+  font-size: 16px;
+  color: oklch(0.145, 0, 0);
   font-weight: 500;
   margin-bottom: 4px;
 }
 .subtitle-small {
-  font-size: 13px;
-  color: #9ca3af;
+  font-size: 16px;
+  color: #717182;
   margin-bottom: 22px;
 }
 
@@ -133,7 +133,7 @@
 }
 .plan-card--selected {
   border-color: #1a1a1a;
-  background: white;
+  background: #F2F2F3;
   box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
 }
 
@@ -192,6 +192,11 @@
   border: 1px solid #f0f0f0;
   background: #f9fafb;
   transition: background 0.15s, border-color 0.15s;
+  cursor: pointer;
+}
+.price-block:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
 }
 .price-block--active {
   background: #f0fdf4;
