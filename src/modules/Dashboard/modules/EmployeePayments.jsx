@@ -84,49 +84,6 @@ export default function EmployeePayments() {
             <div className={styles.emptyState}>
               No employees are currently onboarded. Use the "Onboard Staff" feature to add employees first.
             </div>
-
-            <div className={styles.paymentBankingSection}>
-              <div className={styles.sectionHeader}>
-                <div>
-                  <h2 className={styles.sectionTitle}>Payment &amp; Banking</h2>
-                  <p className={styles.sectionSubtitle}>
-                    Manage your business bank accounts for employee payments and subscription billing
-                  </p>
-                </div>
-                <button className={styles.addAccountBtn}>+ Add Account</button>
-              </div>
-
-              <div className={styles.bankAccountsCard}>
-                <div className={styles.bankAccountInfo}>
-                  <div className={styles.bankAccountSummary}>
-                    <span className={styles.bankAccountName}>TechCorp Nigeria Limited</span>
-                    <div className={styles.bankAccountMeta}>
-                      <span className={styles.bankTagVerified}>Verified</span>
-                      <span className={styles.bankTagDefault}>Default</span>
-                    </div>
-                  </div>
-                  <div className={styles.bankAccountDetails}>
-                    <span>Account: 0123456789</span>
-                    <span>Bank: Access Bank</span>
-                    <span>Type: Current</span>
-                  </div>
-                </div>
-                <div className={styles.bankAccountActions}>
-                  <button className={styles.iconBtn} aria-label="Edit account">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 20h9" />
-                      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" />
-                    </svg>
-                  </button>
-                  <button className={styles.iconBtn} aria-label="Delete account">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="3 6 5 6 21 6" />
-                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         )}
 
