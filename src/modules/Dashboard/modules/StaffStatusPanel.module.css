@@ -193,7 +193,7 @@
 
 .star {
   font-size: 12px;
-  color: #d1d5db;
+  color: #aeb3b9;
   line-height: 1;
 }
 
@@ -205,12 +205,13 @@
 
 .tagChip {
   display: inline-block;
-  padding: 6px 10px;
+  padding: 3px 7px;
   border-radius: 8px;
-  background: #f3f4f6;
-  border: 1px solid #e5e7eb;
+  width: fit-content;
+  background: #ffffff;
+  border: 1px solid #d1c6c6;
   font-size: 12px;
-  color: #6b7280;
+  color: #000000;
   font-weight: 500;
 }
 
@@ -234,9 +235,7 @@
 
 .emptyState {
   border-radius: 18px;
-  background: #f8fafc;
-  border: 1px dashed #d1d5db;
-  padding: 24px 22px;
+  
   color: #6b7280;
   font-size: 14px;
   text-align: center;
