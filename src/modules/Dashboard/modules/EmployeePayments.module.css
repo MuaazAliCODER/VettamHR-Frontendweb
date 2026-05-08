@@ -18,7 +18,7 @@
   gap: 8px;
   background: #f3f4f6;
   padding: 2px;
-  border-radius: 15px;
+  border-radius: 999px;
   border: 1px solid #e5e7eb;
 }
 
@@ -27,7 +27,7 @@
   border: none;
   background: transparent;
   padding: 12px 16px;
-  border-radius: 15px;
+  border-radius: 999px;
   color: #6b7280;
   font-weight: 600;
   cursor: pointer;
