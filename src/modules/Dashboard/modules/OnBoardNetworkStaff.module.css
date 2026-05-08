@@ -106,7 +106,7 @@
   border: 1.5px solid var(--color-gray-200);
   border-radius: 12px;
   font-size: 15px;
-  color: #B1B2B6 !important;
+  color: #111827;
   transition: all var(--transition);
   outline: none;
 }
@@ -121,14 +121,14 @@
   box-shadow: var(--shadow-input-focus);
 }
 
-.inputError {
+/* .inputError {
   border-color: var(--color-error) !important;
   background: var(--color-error-bg) !important;
-}
+} */
 
-.inputSuccess {
+/* .inputSuccess {
   border-color: var(--color-success) !important;
-}
+} */
 
 .errMsg {
   font-size: 12px;
