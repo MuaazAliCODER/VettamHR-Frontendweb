@@ -67,7 +67,7 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
     }
   };
 
-  const maskedAccount = form.accountNumber ? `****${form.accountNumber.slice(-4)}` : "";
+  const maskedAccount = form.accountNumber ? `${form.accountNumber.slice(-4)}` : "";
 
   const handleSubmit = async () => {
     const errs = validate();
