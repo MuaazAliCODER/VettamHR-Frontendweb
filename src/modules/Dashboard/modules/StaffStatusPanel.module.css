@@ -235,9 +235,7 @@
 
 .emptyState {
   border-radius: 18px;
-  background: #f8fafc;
-  border: 1px dashed #d1d5db;
-  padding: 24px 22px;
+  
   color: #6b7280;
   font-size: 14px;
   text-align: center;
