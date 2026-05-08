@@ -275,6 +275,7 @@
 
 /* Help btn */
 .help-btn {
+  display: none !important;
   position: fixed; bottom: 20px; right: 20px;
   width: 38px; height: 38px;
   background: #1a1a1a; border-radius: 50%;
