@@ -218,7 +218,7 @@
 }
 .complete-btn:hover:not(:disabled) { background: #818089; }
 .complete-btn:active { transform: scale(0.99); }
-.complete-btn:disabled { background: #d1d5db; color: #9ca3af; cursor: not-allowed; }
+.complete-btn:disabled { background: #818089; color: #ffffff; cursor: not-allowed; }
 
 /* Back link */
 .back-link {
