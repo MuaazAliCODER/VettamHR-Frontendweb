@@ -211,6 +211,7 @@ export default function BillingPage({ registrationData }) {
                 onChange={(e) => setBillingCycle(e.target.value)}
               >
                 <option>Monthly</option>
+                <option>6 Months</option>
                 <option>Annual</option>
               </select>
               <svg className={styles.selectChevron} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

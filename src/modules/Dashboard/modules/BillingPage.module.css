@@ -757,7 +757,7 @@
 /* ───────────── ACCOUNT CARD ───────────── */
 
 .bankAccountItem {
-  border: 1.4px solid #1f2937;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 16px 14px;
   background: #ffffff;
