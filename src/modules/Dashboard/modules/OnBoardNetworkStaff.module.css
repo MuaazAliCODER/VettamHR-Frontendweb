@@ -121,10 +121,10 @@
   box-shadow: var(--shadow-input-focus);
 }
 
-/* .inputError {
-  border-color: var(--color-error) !important;
-  background: var(--color-error-bg) !important;
-} */
+.inputError {
+  border-color: red !important;
+  
+}
 
 /* .inputSuccess {
   border-color: var(--color-success) !important;
@@ -132,7 +132,7 @@
 
 .errMsg {
   font-size: 12px;
-  color: var(--color-error);
+  color: red;
   font-weight: 500;
 }
 
