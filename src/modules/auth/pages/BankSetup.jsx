@@ -227,7 +227,14 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
           <button
             className={`complete-btn ${submitting ? "submitting" : ""}`}
             onClick={handleSubmit}
-            disabled={submitting}
+            disabled={
+              submitting ||
+              !form.bank ||
+              !form.accountNumber ||
+              !/^\d{10}$/.test(form.accountNumber) ||
+              !form.accountType ||
+              verifyState !== "success"
+            }
           >
             {submitting ? <><span className="spinner white" /> Completing...</> : "Complete Registration"}
           </button>
