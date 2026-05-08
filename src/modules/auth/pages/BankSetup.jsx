@@ -183,12 +183,17 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
             <p className="field-hint">Enter your 10-digit NUBAN account number</p>
             {errors.accountNumber && <p className="field-error">{errors.accountNumber}</p>}
             {verifyState === "success" && (
-              <p className="verified-name">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                {verifiedName} · {maskedAccount}
-              </p>
+              <div className="verification-success">
+                <div className="verification-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div className="verification-text">
+                  <p className="verification-title">Account Verified</p>
+                  <p className="verification-subtitle">{verifiedName} · {maskedAccount}</p>
+                </div>
+              </div>
             )}
           </div>
 
