@@ -27,7 +27,6 @@ export default function StaffStatusPanel({
         </div>
 
         <div className={styles.contentArea}>
-          <label className={styles.searchLabel}>Search employees</label>
           <div className={styles.searchField}>
             <svg
               viewBox="0 0 24 24"
