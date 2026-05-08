@@ -79,6 +79,159 @@
   color:#717182;
 }
 
+.employeeGrid {
+  max-width: 300px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.employeeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  background: hsl(0, 0%, 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.headerContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+}
+
+.employeeName {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.statusBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: #111827;
+  border-radius: 4px;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+.employeeRole {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.detailGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+.detailValue {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.ratingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ratingDisplay {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.starsRow {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  font-size: 12px;
+  color: #d1d5db;
+  line-height: 1;
+}
+
+.ratingCount {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.tagChip {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.viewButton {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: white;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.viewButton:hover {
+  border-color: #111827;
+  background: #f9fafb;
+}
+
 .emptyState {
   border-radius: 18px;
   background: #f8fafc;

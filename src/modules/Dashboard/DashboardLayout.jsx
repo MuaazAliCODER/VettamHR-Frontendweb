@@ -36,9 +36,21 @@ export default function DashboardLayout({ user, onSignOut }) {
       case "directory": return (
         <StaffStatusPanel
           title="Employee Directory"
-          description="View and manage all onboarded employees in your organization (0 total)."
+          description="View and manage all onboarded employees in your organization (1 total)."
           searchPlaceholder="Search employees by name, role, department, phone, NIN, or skills..."
           emptyMessage="No employees have been onboarded yet. Use the 'Onboard Staff' feature to add employees to your directory."
+          employees={[
+            {
+              id: "1",
+              initials: "TT",
+              name: "test test",
+              role: "Project Manager",
+              department: "Software Development",
+              status: "Active",
+              rating: 0,
+              tag: "test abc",
+            },
+          ]}
         />
       );
       case "payments": return <EmployeePayments />;
