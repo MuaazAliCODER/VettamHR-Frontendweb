@@ -204,7 +204,7 @@
 .select {
   appearance: none;
   -webkit-appearance: none;
-  background: #fff;
+  background: #F5F5F7;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   padding: 8px 36px 8px 12px;
@@ -493,7 +493,7 @@
   border-radius: 12px;
   padding: 24px 28px;
   margin-top: 16px;
-  background: #fafafa;
+  background: #ffffff;
 }
 
 .addBankFormHeader {
@@ -537,7 +537,7 @@
   font-family: inherit;
   font-size: 13px;
   color: #111827;
-  background: #fff;
+  background:#F5F5F7;
   transition: border-color 0.15s;
 }
 
@@ -562,7 +562,7 @@
 
 /* Security Box */
 .securityBox {
-  background: #fff;
+  background: #F5F5F7;
   border: 1px solid #e5e7eb;
   border-radius: 9px;
   padding: 14px 16px;
@@ -574,7 +574,7 @@
   gap: 7px;
   font-size: 12.5px;
   font-weight: 700;
-  color: #111827;
+  color: #000;
   margin-bottom: 10px;
 }
 
@@ -589,7 +589,7 @@
 
 .securityList li {
   font-size: 12px;
-  color: #6b7280;
+  color: #000;
   padding-left: 12px;
   position: relative;
 }
@@ -658,4 +658,253 @@
 @media (max-width: 480px) {
   .pageTitle { font-size: 20px; }
   .addBankForm { padding: 16px; }
+}
+/* ───────────── PAYMENT & BANKING ───────────── */
+
+.sectionIconRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.sectionIconBox {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #f5f6f8;
+  border: 1px solid #eceef2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 2px;
+}
+
+.cardSubtitle {
+  font-size: 12.5px;
+  color: #8b93a1;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ───────────── BANK SECTION ───────────── */
+
+.bankSection {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.bankSectionHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.bankSectionLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bankTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 2px;
+}
+
+.bankSubtitle {
+  font-size: 12.5px;
+  color: #8b93a1;
+  margin: 0;
+}
+
+/* ───────────── ADD ACCOUNT BUTTON ───────────── */
+
+.addAccountBtn {
+  height: 36px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 9px;
+  background: #030617;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+.addAccountBtn:hover {
+  background: #111827;
+}
+
+/* ───────────── ACCOUNT CARD ───────────── */
+
+.bankAccountItem {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 14px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  transition: 0.2s ease;
+}
+
+.bankAccountItem:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* LEFT */
+
+.bankAccountLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.bankAccountTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.bankAccountName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1;
+}
+
+/* VERIFIED */
+
+.verifiedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.verifiedBadge svg {
+  stroke: white;
+}
+
+/* DEFAULT */
+
+.defaultBadge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* META */
+
+.bankAccountMeta {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  flex-wrap: wrap;
+}
+
+.bankMetaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bankMetaLabel {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.bankMetaValue {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ACTIONS */
+
+.bankAccountActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.iconBtn:hover {
+  background: #f3f4f6;
+}
+
+.iconBtnDelete svg {
+  stroke: #ef4444;
+}
+
+.iconBtnDelete:hover {
+  background: #fef2f2;
+}
+
+/* ───────────── RESPONSIVE ───────────── */
+
+@media (max-width: 768px) {
+  .bankSectionHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .addAccountBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bankAccountItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bankAccountMeta {
+    gap: 16px;
+  }
+
+  .bankAccountActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
