@@ -174,7 +174,7 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
                 {verifyState === "loading" ? (
                   <span className="spinner" />
                 ) : verifyState === "success" ? (
-                  "✓ Verified"
+                  "Verified"
                 ) : (
                   "Verify"
                 )}
