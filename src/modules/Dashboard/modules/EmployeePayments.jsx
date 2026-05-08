@@ -48,30 +48,41 @@ export default function EmployeePayments() {
             </div>
 
             <div className={styles.sourceCard}>
-              <div>
-                <p className={styles.sourceLabel}>Payment Source</p>
-                <div className={styles.sourceInfo}>
-                  <div>
-                    <p className={styles.sourceName}>Account Name:</p>
-                    <p className={styles.sourceValue}>TechCorp Nigeria Limited</p>
-                  </div>
-                  <div>
-                    <p className={styles.sourceName}>Account Number:</p>
-                    <p className={styles.sourceValue}>0123456789</p>
-                  </div>
-                  <div>
-                    <p className={styles.sourceName}>Bank:</p>
-                    <p className={styles.sourceValue}>Access Bank</p>
-                  </div>
+              <p className={styles.sourceLabel}>
+                <svg className={styles.sourceLabelIcon} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11"/>
+                </svg>
+                Payment Source
+              </p>
+
+              <div className={styles.sourceInfo}>
+                <div className={styles.sourceRow}>
+                  <span className={styles.sourceName}>Account Name:</span>
+                  <span className={styles.sourceValue}>TechCorp Nigeria Limited</span>
+                </div>
+                <div className={styles.sourceRow}>
+                  <span className={styles.sourceName}>Account Number:</span>
+                  <span className={styles.sourceValue}>0123456789</span>
+                </div>
+                <div className={styles.sourceRow}>
+                  <span className={styles.sourceName}>Bank:</span>
+                  <span className={styles.sourceValue}>Access Bank</span>
                 </div>
               </div>
+
               <p className={styles.sourceNote}>
-                All payments will be processed from this default account. You can manage your bank accounts in Subscription & Billing.
+                <svg className={styles.sourceNoteIcon} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="8.5" strokeWidth="2.5"/>
+                  <line x1="12" y1="12" x2="12" y2="16"/>
+                </svg>
+                All payments will be processed from this default account. You can manage your bank accounts in{" "}
+                <a href="#" className={styles.sourceLink}>Subscription &amp; Billing</a>.
               </p>
             </div>
 
             <div className={styles.emptyState}>
-              <p>No employees are currently onboarded. Use the "Onboard Staff" feature to add employees first.</p>
+              No employees are currently onboarded. Use the "Onboard Staff" feature to add employees first.
             </div>
           </div>
         )}
@@ -82,9 +93,8 @@ export default function EmployeePayments() {
               <h2>Bulk Payment</h2>
               <p>Pay multiple employees at once (e.g., monthly salaries)</p>
             </div>
-
             <div className={styles.emptyState}>
-              <p>No employees are currently onboarded. Use the "Onboard Staff" feature to add employees first.</p>
+              No employees are currently onboarded. Use the "Onboard Staff" feature to add employees first.
             </div>
           </div>
         )}
@@ -111,7 +121,9 @@ export default function EmployeePayments() {
                   {paymentHistory.map((row) => (
                     <tr key={row.id}>
                       <td className={styles.employeeCell}>
-                        <span className={styles.avatar}>{row.name.split(" ").map((part) => part[0]).join("")}</span>
+                        <span className={styles.avatar}>
+                          {row.name.split(" ").map((part) => part[0]).join("")}
+                        </span>
                         <span>{row.name}</span>
                       </td>
                       <td>{row.amount}</td>

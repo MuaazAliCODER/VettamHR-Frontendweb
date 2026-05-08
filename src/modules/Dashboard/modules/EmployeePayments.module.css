@@ -1,24 +1,25 @@
 .wrapper {
   display: flex;
   justify-content: center;
-  padding: 24px;
+ 
 }
 
 .panel {
   width: 100%;
   max-width: 1080px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 28px;
-  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
+/* ── Tab bar — its own separate box ── */
 .tabBar {
   display: flex;
   gap: 8px;
   background: #f3f4f6;
-  padding: 10px;
+  padding: 2px;
+  border-radius: 15px;
+  border: 1px solid #e5e7eb;
 }
 
 .tabButton {
@@ -26,7 +27,7 @@
   border: none;
   background: transparent;
   padding: 12px 16px;
-  border-radius: 999px;
+  border-radius: 15px;
   color: #6b7280;
   font-weight: 600;
   cursor: pointer;
@@ -36,23 +37,29 @@
 .activeTab {
   background: #ffffff;
   color: #111827;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 }
 
+/* ── Content box — separate box below tab bar ── */
 .contentBlock {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
   padding: 28px 32px 36px;
 }
 
 .headlineRow {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   margin-bottom: 24px;
 }
 
 .headlineRow h2 {
   margin: 0;
   font-size: 22px;
+  font-weight: 700;
   color: #111827;
 }
 
@@ -63,61 +70,95 @@
   line-height: 1.75;
 }
 
+/* ── Source card ── */
 .sourceCard {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 24px;
-  display: grid;
-  gap: 16px;
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   margin-bottom: 28px;
 }
 
 .sourceLabel {
-  margin: 0 0 10px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.sourceLabelIcon {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.sourceInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sourceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.sourceName {
+  color: #6b7280;
+}
+
+.sourceValue {
   font-size: 13px;
   font-weight: 700;
   color: #111827;
 }
 
-.sourceInfo {
-  display: grid;
-  gap: 14px;
-}
-
-.sourceName {
-  margin: 0;
-  font-size: 12px;
-  color: #6b7280;
-}
-
-.sourceValue {
-  margin: 4px 0 0;
-  font-size: 14px;
-  color: #111827;
-  font-weight: 600;
-}
-
+/* ── Source note — full blue line, no separator ── */
 .sourceNote {
   margin: 0;
-  color: #4b5563;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 13px;
-  line-height: 1.7;
+  color: #3b82f6;
+  line-height: 1.6;
 }
 
+.sourceNoteIcon {
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+.sourceLink {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sourceLink:hover {
+  text-decoration: underline;
+}
+
+/* ── Empty state — plain centered text, no box ── */
 .emptyState {
-  min-height: 180px;
-  border-radius: 20px;
-  border: 1px dashed #d1d5db;
+  min-height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 24px;
+  padding: 24px;
   color: #6b7280;
   font-size: 14px;
   text-align: center;
 }
 
+/* ── Payment history table ── */
 .tableWrapper {
   overflow-x: auto;
 }
@@ -140,6 +181,7 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  font-weight: 600;
 }
 
 .paymentTable tr:last-child td {
@@ -163,6 +205,7 @@
   justify-content: center;
   font-size: 13px;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .statusBadge {
@@ -181,7 +224,7 @@
 }
 
 .statusPending {
-  background:#ECEEF2;
+  background: #ECEEF2;
   color: #000000;
 }
 
@@ -195,18 +238,15 @@
   color: #374151;
 }
 
+/* ── Responsive ── */
 @media (max-width: 820px) {
-  .panel {
-    border-radius: 20px;
-  }
-
   .contentBlock {
     padding: 20px;
+    border-radius: 16px;
   }
 
-  .sourceCard,
-  .emptyState {
-    padding: 20px;
+  .sourceCard {
+    padding: 16px 20px;
   }
 
   .paymentTable th,
@@ -218,5 +258,6 @@
 @media (max-width: 560px) {
   .tabBar {
     flex-direction: column;
+    border-radius: 20px;
   }
 }
