@@ -60,7 +60,7 @@ export default function BankSetup({ registrationData, onBack, onComplete }) {
     const success = form.accountNumber !== "0000000000"; // mock: fail all-zeros
     if (success) {
       setVerifyState("success");
-      setVerifiedName("ACME LOGISTICS LTD"); // replace with API response
+      setVerifiedName("Bussiness Account"); // replace with API response
     } else {
       setVerifyState("error");
       setErrors((prev) => ({ ...prev, accountNumber: "Account not found. Check the number and bank." }));
