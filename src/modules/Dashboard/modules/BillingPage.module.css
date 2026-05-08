@@ -204,7 +204,7 @@
 .select {
   appearance: none;
   -webkit-appearance: none;
-  background: #fff;
+  background: #F5F5F7;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   padding: 8px 36px 8px 12px;
@@ -493,7 +493,7 @@
   border-radius: 12px;
   padding: 24px 28px;
   margin-top: 16px;
-  background: #fafafa;
+  background: #ffffff;
 }
 
 .addBankFormHeader {
@@ -537,7 +537,7 @@
   font-family: inherit;
   font-size: 13px;
   color: #111827;
-  background: #fff;
+  background:#F5F5F7;
   transition: border-color 0.15s;
 }
 
@@ -562,7 +562,7 @@
 
 /* Security Box */
 .securityBox {
-  background: #fff;
+  background: #F5F5F7;
   border: 1px solid #e5e7eb;
   border-radius: 9px;
   padding: 14px 16px;
@@ -574,7 +574,7 @@
   gap: 7px;
   font-size: 12.5px;
   font-weight: 700;
-  color: #111827;
+  color: #000;
   margin-bottom: 10px;
 }
 
@@ -589,7 +589,7 @@
 
 .securityList li {
   font-size: 12px;
-  color: #6b7280;
+  color: #000;
   padding-left: 12px;
   position: relative;
 }
