@@ -15,8 +15,12 @@ function RegistrationSuccess({ registrationData, onContinue }) {
         {/* Logo */}
         <div className={styles.logoRow}>
           <div className={styles.logoIcon}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="20 6 9 17 4 12" />
+            <svg width="30" height="30" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="40" fill="#050815" />
+              <path d="M24 40L35.5 52L56 30" stroke="white" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="38" cy="18" r="6" fill="#D9D9D9" />
+              <circle cx="24" cy="21" r="6" fill="#D9D9D9" />
+              <circle cx="52" cy="21" r="6" fill="#D9D9D9" />
             </svg>
           </div>
           <span className={styles.logoText}>VettamHR</span>

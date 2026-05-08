@@ -541,7 +541,7 @@
   transition: border-color 0.15s;
 }
 
-.formInput::placeholder { color: #9ca3af; }
+.formInput::placeholder { color: #717182; }
 
 .formInput:focus {
   outline: none;

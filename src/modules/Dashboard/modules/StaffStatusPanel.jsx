@@ -6,8 +6,15 @@ export default function StaffStatusPanel({
   description,
   searchPlaceholder,
   emptyMessage,
+  employees = [],
 }) {
   const [query, setQuery] = useState("");
+
+  const normalizedQuery = query.trim().toLowerCase();
+  const filteredEmployees = employees.filter((employee) => {
+    const searchable = `${employee.name} ${employee.role} ${employee.department} ${employee.status} ${employee.tag}`.toLowerCase();
+    return searchable.includes(normalizedQuery);
+  });
 
   return (
     <div className={styles.panelWrapper}>
@@ -44,9 +51,57 @@ export default function StaffStatusPanel({
             />
           </div>
 
-          <div className={styles.emptyState}>
-            <p>{emptyMessage}</p>
-          </div>
+          {employees.length > 0 ? (
+            filteredEmployees.length > 0 ? (
+              <div className={styles.employeeGrid}>
+                {filteredEmployees.map((employee) => (
+                  <div key={employee.id} className={styles.employeeCard}>
+                    <div className={styles.cardTop}>
+                      <div className={styles.avatar}>{employee.initials}</div>
+                      <div className={styles.headerContent}>
+                        <div className={styles.titleRow}>
+                          <h3 className={styles.employeeName}>{employee.name}</h3>
+                          <span className={styles.statusBadge}>{employee.status}</span>
+                        </div>
+                        <p className={styles.employeeRole}>{employee.role}</p>
+                      </div>
+                    </div>
+
+                    <div className={styles.detailGroup}>
+                      <span className={styles.detailLabel}>Department</span>
+                      <span className={styles.detailValue}>{employee.department}</span>
+                    </div>
+
+                    <div className={styles.ratingSection}>
+                      <span className={styles.detailLabel}>Rating</span>
+                      <div className={styles.ratingDisplay}>
+                        <span className={styles.starsRow}>
+                          {Array.from({ length: 5 }).map((_, index) => (
+                            <span key={index} className={styles.star}>
+                              {index < employee.rating ? "★" : "☆"}
+                            </span>
+                          ))}
+                        </span>
+                        <span className={styles.ratingCount}>{employee.rating}</span>
+                      </div>
+                    </div>
+
+                    <span className={styles.tagChip}>{employee.tag}</span>
+
+                    <button className={styles.viewButton}>View Details</button>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className={styles.emptyState}>
+                <p>No employees match your search.</p>
+              </div>
+            )
+          ) : (
+            <div className={styles.emptyState}>
+              <p>{emptyMessage}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
