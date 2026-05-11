@@ -240,7 +240,8 @@
   align-items: flex-start;
   gap: 9px;
   font-size: 13px;
-  color: #374151;
+  color: (oklch(0.145,0,0))
+;
   cursor: pointer;
   line-height: 1.5;
 }
