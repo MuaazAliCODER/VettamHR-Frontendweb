@@ -189,7 +189,7 @@
   font-weight: 500;
 }
 .match-ok   { color: #16a34a; }
-.match-fail { color: #dc2626; }
+.match-fail { color: #dc2626; display: none;}
 
 
 .field-hint {
