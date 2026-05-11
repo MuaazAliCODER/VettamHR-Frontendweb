@@ -307,7 +307,7 @@
 
 .plan-summary {
   margin-top: 16px;
-  background: #f9fafb;
+  background: #ECECF0;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   padding: 12px 16px;
@@ -324,7 +324,7 @@
 }
 .summary-label {
   font-size: 13px;
-  color: #6b7280;
+  color: #000000;
 }
 .summary-value {
   font-size: 13px;
@@ -337,7 +337,7 @@
 .summary-cycle {
   font-size: 12px;
   font-weight: 400;
-  color: #9ca3af;
+  color: #000000;
   margin-left: 2px;
 }
 

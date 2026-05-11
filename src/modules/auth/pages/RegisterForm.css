@@ -210,7 +210,7 @@
 
 
 .subscription-box {
-  background: #f9fafb;
+  background: #ECECF0;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   padding: 14px 16px;
@@ -224,9 +224,9 @@
 .sub-row {
   display: flex;
   justify-content: space-between;
-  font-size: 13px; color: #374151;
+  font-size: 13px; color: #000000;
 }
-.sub-row span:first-child { color: #6b7280; }
+.sub-row span:first-child { color: #000000; }
 .sub-row span:last-child  { font-weight: 500; color: #1a1a1a; }
 .sub-row--total {
   

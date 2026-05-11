@@ -223,7 +223,7 @@
 
 /* Summary box */
 .summary-box {
-  background: #f9fafb;
+  background: #ECECF0;
   border-radius: 10px;
   padding: 16px 18px;
   margin-bottom: 18px;
@@ -233,10 +233,10 @@
 .summary-rows { display: flex; flex-direction: column; gap: 6px; }
 .summary-row {
   display: flex; justify-content: space-between;
-  font-size: 13px; color: #374151;
+  font-size: 13px; color: #000000;
 }
 .amount-row {
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #000000bb;
   padding-top: 8px; margin-top: 2px;
   font-weight: 600;
 }
